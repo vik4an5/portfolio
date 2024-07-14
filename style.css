@@ -15,7 +15,8 @@
     --bg-color: #000000;
     --second-bg-color:#161616;
     --text-color: #fff;
-    --main-color:#06d694;
+    --main-color:#fe0909;
+    --o-transition: all 400ms ease;
 }
 
 html {
@@ -217,6 +218,7 @@ span{
 }
 
 .typing-text{
+    display: inline-block;
     font-size: 34px;
     font-weight: 600;
     min-width: 280px;
@@ -231,14 +233,14 @@ span{
     animation: words 20s infinite;
 }
 .typing-text span::after{
-    content: '';
+    content: "";
     background: var(--bg-color);
     position: absolute;
-    width: calc(100% +8px);
+    width: calc(100% + 8px);
     height: 100%;
     border-left: 3px solid var(--bg-color);
-    right: -8;
-    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+    right: -8px;
+    animation: cursor 0.6s infinite ,typing 20s steps(14) infinite;
 }
 
 @keyframes cursor{
@@ -247,40 +249,40 @@ span{
     }
 }
 @keyframes words{
-    0% , 20%{
-       content: 'Web Developer'; 
+    0%, 20%{
+       content: "Web Developer"; 
     }
-    21% , 40%{
-        content: 'Software Developer'; 
+    21%, 40%{
+        content: "Software Developer"; 
 
     }
-    41% , 60%{
-        content: 'Web Designer'; 
+    41%, 60%{
+        content: "Web Designer"; 
 
     }
-    61% , 80%{
-        content: 'Youtuber'; 
+    61%, 80%{
+        content: "Youtuber"; 
 
     }
-    81% , 100%{
-        content: 'Video Editor'; 
+    81%, 100%{
+        content: "Video Editor"; 
 
     }
 }
 
-@keyframes typing{
+@keyframes typing {
     10%, 15%,
     30%, 35%,
     50%, 55%,
     70%, 75%,
-    90%, 95% {
+    90%, 95%  {
         width: 0;
     }
     5%, 20%,
     25%, 40%,
     45%, 60%,
     65%, 80%, 85%{
-        width: calc(100% +8px);
+        width: calc(100% + 8px);
     }
 }
 @media (max-width:1000px){
@@ -387,7 +389,7 @@ span{
     margin-bottom: 1rem;
 }
 .skills .container{
-    background-color: #034526;
+    background-color: #7c0606;
     color: var(--text-color);
     border-radius: 1rem;
     padding: 2rem;
@@ -424,7 +426,7 @@ span{
 }
 
 .skills .container .bar .info img{
-    width: 2vw;
+    width: 4vw;
 }
 .skills .container .bar .info span{
     font-size: 2rem;
@@ -448,6 +450,8 @@ span{
         margin-top: 5px;
         width: 100%;
     }
+
+   
 }
 
 /* education section */
@@ -465,7 +469,7 @@ span{
     content: '';
     position: absolute;
     width: 6px;
-    background: rgb(48, 236, 167);
+    background: rgb(94, 8, 8);
     top: 0;
     bottom: 0;
     left: 50%;
@@ -487,7 +491,7 @@ span{
     height: 25px;
     line-height: 25px;
     right: -17px;
-    background-color: white;
+    background-color: black;
     border: 4px solid var(--main-color);
     top: 15px;
     border-radius: 50%;
@@ -496,7 +500,7 @@ span{
     text-align: center;
     font-weight: 600;
     font-family: "Font Awesome\ 5 free";
-    color: rgb(48, 236, 167);
+    color: rgb(190, 53, 40);
 }
 .education .left{
     left: 0;
@@ -597,6 +601,65 @@ span{
     }
 }
 
+/* courses */
+
+
+.courses {
+    margin-top: 10rem;
+
+}
+.courses h2{
+    font-size: 6rem;
+    font-weight: 600;
+    color: white;
+}
+.course__info h4{
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+}
+.course__info p{
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+}
+
+.courses__container {
+    margin-top: 7rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+
+.course {
+    background: var(--main-color);
+    text-align: center;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.course__image img{
+    
+        width: 100%;
+        display: block;
+        object-fit: cover;
+    
+}
+
+.course:hover {
+    background: transparent;
+    border-color: var(--main-color);
+}
+
+.course__info {
+    padding: 2rem;
+}
+
+.course__info p {
+    margin: 1.2rem 0 2rem;
+    font-size: 0.9rem;
+}
 
 
 
@@ -708,6 +771,15 @@ span{
         margin: 0 5rem;
     }
 
+    .courses {
+        margin-top: 0;
+    }
+
+    .courses__container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
 
 }
 
@@ -724,6 +796,15 @@ span{
     .footer{
         padding: 2rem 3%;
     }
+
+    .courses {
+        margin-top: 0;
+    }
+
+    .courses__container {
+        grid-template-columns: 1fr 1fr;
+    }
+
 }
 
 @media(max-width:895px){
@@ -733,4 +814,13 @@ span{
     .services-container{
         grid-template-columns: repeat(1,1fr);
     }
+
+    .courses {
+        margin-top: 0;
+    }
+
+    .courses__container {
+        grid-template-columns: 1fr 1fr;
+    }
+
 }
